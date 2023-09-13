@@ -1,10 +1,11 @@
 import poster from '../assets/poster.svg'
 import Rating from './Rating';
+import { Link } from 'react-router-dom';
 
 const MovieCard = (props)=>{
 
     return (
-        <div data-testid='movie-card' className='border '>
+        <Link to={`movie/${props.title}`} data-testid='movie-card' className='border hover:scale-105'>
                     <div>
                         <img data-testid='movie-poster' className='w-full' src={poster} alt="" />
                     </div>
@@ -15,7 +16,7 @@ const MovieCard = (props)=>{
                         <p className='text-gray-500'>action adventure</p>
                     </div>
                     
-                </div>
+                </Link>
     )
 };
 export default MovieCard
