@@ -10,7 +10,7 @@ const Rating = ({imdbScore, tomatoeScore}) =>{
                 </span>
                 
                 <span className='inline-block ms-8'>
-                <img className='w-8 h-8 inline-block' src={tomatoe} alt="" /> {tomatoeScore}
+                <img className='w-8 h-8 inline-block' src={tomatoe} alt="" /> {Math.round(tomatoeScore)}%
                 </span>
             </p>
     )

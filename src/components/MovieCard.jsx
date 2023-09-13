@@ -1,5 +1,8 @@
+import {useState} from 'react';
+
 import poster from '../assets/poster.svg'
 import heart from '../assets/Heart.svg'
+import redHeart from '../assets/Red_heart.svg';
 
 import Rating from './Rating';
 
@@ -46,7 +49,8 @@ const GENRE = {
 
 const MovieCard = ({title, movie})=>{
 
-    console.log(movie);
+    const [clicked, setClicked] = useState(false);
+    
     return (
         <Link to={`movie/${movie.id}`} data-testid='movie-card' className='border relative hover:scale-105'>
                     <div>
@@ -55,13 +59,13 @@ const MovieCard = ({title, movie})=>{
                     <div className='px-4 py-3'>
                         <p data-testid='movie-release-date' className='text-gray-500'>{movie.release_date.slice(0, 4)}</p>
                         <h2 data_testid='movie-title' className='text-xl'>{movie.title}</h2>
-                        <Rating imdcScore='82.0' tomatoeScore='87%'></Rating>
+                        <Rating imdbScore={movie.vote_average} tomatoeScore={movie.popularity}></Rating>
                         <p className='text-gray-500'>{movie.genre_ids.map(genre_id=>{
                             return <span className='px-1' key={genre_id}>{GENRE[genre_id]}</span>
                         })}</p>
                     </div>
-                    <button className='w-12 h-12 rounded-full absolute -top-2 -right-3'>
-                        <img src={heart} alt="" />
+                    <button onClick={(event)=>setClicked(true)} className='w-12 h-12 rounded-full absolute -top-2 p-4 -right-3 hover:bg-red-400'>
+                        <img src={!clicked ?heart : redHeart} alt="" />
                     </button>
                 </Link>
     )

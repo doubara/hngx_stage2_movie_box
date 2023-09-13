@@ -3,20 +3,20 @@ import famousImg from '../assets/Rectangle_37.png'
 
 const MovieDetailsCard = ({movie}) =>{
 
-    console.log(movie);
     return <div className="min-h-full text-black px-6 py-6">
         <div className="h-1/2">
             <img className='w-full  object-cover' src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
         </div>
-        <p className="py-6">{movie.title} . {movie.release_date.slice(0,4)} . PG-13 . {`${Math.round(movie.runtime/60)-1}Hr ${movie.runtime%60}Mins`} <span className="text-red-400 0border-grey-200 rounded-full p-4">{movie.genres.map(genre=>{
-            return <span key={genre} className="text-red-400 border border-gray-200 rounded-full inline-blok ml-2">{genre.name}</span>
+        <p className="py-6">
+            <span data-testid='movie-title'>{movie.title}</span> . <span data-testid='movie-release-date'>{movie.release_date.slice(0,4)}</span> . PG-13 . <span data-testid='movie-runtime'>{`${Math.round(movie.runtime/60)-1}Hr ${movie.runtime%60}Mins`}</span> <span className="text-red-400 0border-grey-200 rounded-full p-4">{movie.genres.map(genre=>{
+            return <span key={genre} className="text-red-400 border border-gray-200 rounded-full inline-blok ml-2 p-2">{genre.name}</span>
         })}</span>  
-        <span className="text-right py-2">
+        <span className="py-2">
             <span className="text-grey-200">{movie.vote_average}</span>
         </span>|{`${Math.round(movie.vote_count/1000)}k`}</p>
         <div className="flex items-stretch">
             <div className="basis-3/4 px-4">
-                <p>{movie.overview}</p>
+                <p data-testid='movie-overview'>{movie.overview}</p>
                 
                 <p className='py-2'>Director: <span className="text-red-400 my-4">Joseph Kosinki</span></p>
                 

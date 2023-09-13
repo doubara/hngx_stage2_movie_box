@@ -20,6 +20,14 @@ export default {
         },
       },
     },
+    screens: {
+      'md': {'max': '767px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '520px'},
+      // => @media (max-width: 639px) { ... 
+      'xsm': {'max': '380px'}
+    },
   },
   plugins: [],
 }
