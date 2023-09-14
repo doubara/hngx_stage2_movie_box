@@ -6,6 +6,7 @@ import { Hourglass } from "react-loader-spinner";
 // custom hook import
 import useFetch from '../components/custom-hooks/useFetch';
 
+import ErrorPage from "../components/ErrorPage";
 import { useParams } from "react-router-dom";
 
 const Movies = (props)=>{
@@ -31,6 +32,7 @@ const Movies = (props)=>{
   colors={['#306cce', '#72a1ed']}
 />}
         </div>
+        {Boolean(error) && <ErrorPage error={error} />}
     </section>
 }
 
