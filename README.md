@@ -45,4 +45,4 @@ The title of each serached movie is a link that routes you to a details page.
 
 ## Author
 
-- Twitter - [@Dhevine_0X](https://www.twitter.com/ayibadoubara)
+- Twitter - [@ayibadoubara](https://www.twitter.com/ayibadoubara)
