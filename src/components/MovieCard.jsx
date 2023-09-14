@@ -1,6 +1,4 @@
 import {useState} from 'react';
-
-import poster from '../assets/poster.svg'
 import heart from '../assets/Heart.svg'
 import redHeart from '../assets/Red_heart.svg';
 
@@ -40,13 +38,13 @@ const MovieCard = ({title, movie})=>{
                     </div>
                     <div className='px-4 py-3'>
                         <p data-testid='movie-release-date' className='text-gray-500'>{movie.release_date}</p>
-                        <h2 data_testid='movie-title' className='text-xl hover:text-gray-800'><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h2>
+                        <h2 className='text-xl '><Link className='hover:text-gray-600 hover:scale-150' data_testid='movie-title' to={`/movie/${movie.id}`}>{movie.title}</Link></h2>
                         <Rating imdbScore={movie.vote_average} tomatoeScore={movie.popularity}></Rating>
                         <p className='text-gray-500'>{movie.genre_ids.map(genre_id=>{
                             return <span className='px-1' key={genre_id}>{GENRE[genre_id]}</span>
                         })}</p>
                     </div>
-                    <button onClick={(event)=>setClicked(previousState=>!previousState)} className='w-12 h-12 rounded-full absolute -top-2 p-4 -right-3 hover:bg-red-400'>
+                    <button onClick={(event)=>setClicked(previousState=>!previousState)} className='w-14 h-14 rounded-full absolute top-1 p-4 right-1 hover:bg-red-400'>
                         <img src={!clicked ?heart : redHeart} alt="" />
                     </button>
                 </div>

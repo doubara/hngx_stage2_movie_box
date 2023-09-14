@@ -1,10 +1,9 @@
 import MovieCard from "./MovieCard";
 
-const MovieGrid = ({movies, className})=>{
-    console.log(className);
+const MovieGrid = ({movies})=>{
     return <div>
-        <div className={`py-4 px-4 customGrid gap-16 ${className}`}>
-            {movies.results.length ? movies.results?.map((movie, index)=>{
+        <div className='customGrid py-4 px-4 gap-4'>
+            {movies.length > 0 ? movies.map((movie, index)=>{
                     return <MovieCard movie={movie}></MovieCard>
                 }) : <p className="text-center text-xl">No Movies to display</p>}
         </div>

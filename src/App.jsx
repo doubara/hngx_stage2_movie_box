@@ -12,13 +12,10 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<Home />}></Route>
+      <Route exact path='/' element={<Home />}></Route>
       <Route path='/movie/:id' element={<Movies />}></Route>
       <Route path='/search/:id' element={<SearchMovie />} ></Route>
-      <Route path='/movies' element={<Movies />}></Route>
-      
       <Route path='*' element={<Home />}></Route>
-      
     </Routes>
   )
 }

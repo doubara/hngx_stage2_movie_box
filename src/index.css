@@ -57,3 +57,6 @@ input{
   color: inherit;
   font: inherit;
 }
+.headerHeight{
+  min-height: 90vh;
+}

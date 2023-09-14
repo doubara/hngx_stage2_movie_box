@@ -28,6 +28,7 @@ export default {
       // => @media (max-width: 639px) { ... 
       'xsm': {'max': '380px'}
     },
+    
   },
   plugins: [],
 }

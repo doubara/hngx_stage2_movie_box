@@ -8,6 +8,7 @@ import useFetch from '../components/custom-hooks/useFetch';
 
 import ErrorPage from "../components/ErrorPage";
 import { useParams } from "react-router-dom";
+import Loader from "../components/loader/Loader";
 
 const Movies = (props)=>{
 
@@ -22,17 +23,10 @@ const Movies = (props)=>{
             <Navigation />
         </div>
         <div className="basis-3/4 min-h-screen border md:basis-1 ">
-            {!isLoading ? <MovieDetailsCard movie={movieData} /> : <Hourglass
-                visible={true}
-                height="40"
-                width="40"
-                ariaLabel="hourglass-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                colors={['#306cce', '#72a1ed']}
-                />}
+            {!isLoading && <MovieDetailsCard movie={movieData} />} 
         </div>
-        {Boolean(error) && <ErrorPage error={error} />}
+        {error && <ErrorPage />}
+        {isLoading && <Loader/>}
     </section>
 }
 

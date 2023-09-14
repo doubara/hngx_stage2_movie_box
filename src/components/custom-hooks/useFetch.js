@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 
 const useFetch = (endpoint)=>{
-    const [movieData, setMovieData] = useState();
+    const [movieData, setMovieData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(undefined);
+    const [error, setError] = useState(false);
 
     useEffect(()=>{
         const options = {
@@ -22,8 +22,8 @@ const useFetch = (endpoint)=>{
                 setIsLoading(false);
             })
             .catch(err =>{
-                setError(err.message);
-                setIsLoading(false);
+                setError(true);
+                setIsLoading(true);
             });    
     }, [endpoint])
     return [isLoading, movieData, error];
