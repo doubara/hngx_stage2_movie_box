@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = (props) =>{
 
-    return <nav className='text-black min-h-screen py-8 md:flex md:min-h-0 md:py-0 items-center text-center '>
+
+    return <nav className='text-black min-h-screen py-8 md:flex md:min-h-0 md:py-0 items-center text-center flex-wrap'>
         <div className='mx-6 my-4 md:my-2'>
             <img className='w-12 h-12 inline-block' src={tvLogo} alt="tv logo" />
             <span className='text-2xl px-4 align-middle'>MovieBox</span>
         </div>
-        <ul className='my-8 md:my-0 md:flex'>
+        <ul className='my-8 md:my-0 md:flex md:order-2 md:flex-1 md:items-center md:text-sm'>
             <li className='my-12 pl-8 pr-2 md:py-2 md:my-0'>
                 <NavLink to='/'>Home</NavLink>
             </li>

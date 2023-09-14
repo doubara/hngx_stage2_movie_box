@@ -1,11 +1,10 @@
 import play from '../assets/Play.svg'
-import tomatoe from '../assets/tomatoe.png';
-import imdbLogo from '../assets/imdb_logo.png';
 import Rating from './Rating';
 
 const HeroComponent = (props) =>{
+
     return(
-        <section className='w-1/3 p-4 ms-16 my-auto'>
+        <section className='w-1/3 p-4 ms-16 my-auto md:w-full md:mx-8 md:px-8 md:mx-auto'>
             
             <h1>John Wick 3 : Parabellum</h1>
             <Rating imdbScore='86.0' tomatoeScore='97'></Rating>

@@ -21,7 +21,7 @@ export default {
       },
     },
     screens: {
-      'md': {'max': '767px'},
+      'md': {'max': '865px'},
       // => @media (max-width: 767px) { ... }
 
       'sm': {'max': '520px'},

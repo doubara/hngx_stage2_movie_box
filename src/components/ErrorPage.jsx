@@ -1,9 +1,7 @@
-import { useRouteError } from "react-router-dom";
-
 export default function ErrorPage({error}) {
 
   return (
-    <div className="text-black" id="error-page">
+    <div className="text-black grid place-items-center" id="error-page">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>

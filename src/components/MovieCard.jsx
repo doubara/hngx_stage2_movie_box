@@ -35,21 +35,21 @@ const MovieCard = ({title, movie})=>{
     
     return (
         <div data-testid='movie-card' className='border relative'>
-                    <div>
-                        <img data-testid='movie-poster' className='w-full' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" />
+                    <div className=''>
+                        <img data-testid='movie-poster' className=' object-cover' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" />
                     </div>
                     <div className='px-4 py-3'>
-                        <p data-testid='movie-release-date' className='text-gray-500'>{movie.release_date.slice(0, 4)}</p>
-                        <h2 data_testid='movie-title' className='text-xl hover:text-gray-800'><Link to={`movie/${movie.id}`}>{movie.title}</Link></h2>
+                        <p data-testid='movie-release-date' className='text-gray-500'>{movie.release_date}</p>
+                        <h2 data_testid='movie-title' className='text-xl hover:text-gray-800'><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h2>
                         <Rating imdbScore={movie.vote_average} tomatoeScore={movie.popularity}></Rating>
                         <p className='text-gray-500'>{movie.genre_ids.map(genre_id=>{
                             return <span className='px-1' key={genre_id}>{GENRE[genre_id]}</span>
                         })}</p>
                     </div>
-                    <button onClick={(event)=>setClicked(true)} className='w-12 h-12 rounded-full absolute -top-2 p-4 -right-3 hover:bg-red-400'>
+                    <button onClick={(event)=>setClicked(previousState=>!previousState)} className='w-12 h-12 rounded-full absolute -top-2 p-4 -right-3 hover:bg-red-400'>
                         <img src={!clicked ?heart : redHeart} alt="" />
                     </button>
                 </div>
     )
 };
-export default MovieCard
+export default MovieCard;
