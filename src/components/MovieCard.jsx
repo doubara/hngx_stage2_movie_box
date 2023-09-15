@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import heart from '../assets/Heart.svg'
-import redHeart from '../assets/Red_heart.svg';
+import redHeart from '../assets/redheart.svg';
 
 import Rating from './Rating';
 
