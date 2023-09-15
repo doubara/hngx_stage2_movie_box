@@ -4,7 +4,7 @@ const MovieDetailsCard = ({movie}) =>{
         <div className="h-1/2">
             <img className='rounded-lg w-full  object-cover' src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
         </div>
-        <p className="py-6 leading-loose flex gap-2 flex-gap-2 md:flex-col text-xl items-center">
+        <p className="py-6 leading-loose flex gap-2 flex-gap-2 lg:flex-col text-xl items-center">
             <span data-testid='movie-title'>{movie?.title} </span>
             <span data-testid='movie-release-date'>{movie?.release_date}</span> 
             <span> PG-13 </span> 
