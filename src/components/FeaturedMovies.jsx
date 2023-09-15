@@ -8,7 +8,6 @@ const FeaturedMovies = (props) =>{
 
     const [url, setUrl] = useState('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1')
     const [isLoading, movieData, error] = useFetch(url);
-    console.log(isLoading);
     return (
         <div className='text-black px-16 py-16 border-black'>
             <h2 className='text-4xl pb-4 font-bold'>Feature Movies</h2>
