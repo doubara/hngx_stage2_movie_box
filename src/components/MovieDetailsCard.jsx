@@ -10,11 +10,12 @@ const MovieDetailsCard = ({movie}) =>{
             <span> PG-13 </span> 
             <span className='px-2' data-testid='movie-runtime'>{movie.runtime}</span>
             <span className="text-red-400 border-grey-200 rounded-full p-4">{movie.genres.map(genre=>{
-            return <span key={genre*Math.random()*876} className="text-red-400 border border-gray-200 rounded-full inline-blok ml-2 p-2">{genre.name}</span>
+            return <span key={genre*Math.random()*876} className="text-red-400 border border-gray-200 rounded-full inline-blok mr-2 p-2">{genre.name}</span>
         })}</span>  
-        <span className="py-2">
-            <span className="text-grey-20 ">{movie.vote_average}</span>
-        </span>|{`${Math.round(movie.vote_count/1000)}k`}</p>
+        <span className="ml-auto md:ml-0">
+            <span className="text-grey-20 ">{movie.vote_average}|{`${Math.round(movie.vote_count/1000)}k`}</span>
+        </span>
+        </p>
         <div className="flex md:flex-col items-stretch">
             <div className="basis-3/4 px-4 text-black">
                 <p data-testid='movie-overview'>{movie.overview}</p>
