@@ -25,7 +25,7 @@ const Movies = (props)=>{
         <div className="basis-3/4 min-h-screen border md:basis-1 ">
             {!isLoading && <MovieDetailsCard movie={movieData} />} 
         </div>
-        {error && <ErrorPage error={error} />}
+        {error.status && <ErrorPage error={error.error} />}
         {isLoading && <Loader/>}
     </section>
 }

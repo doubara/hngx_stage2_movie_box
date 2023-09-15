@@ -11,6 +11,7 @@ const SearchMovie = (props)=>{
     const [url, setUrl] = useState(`https://api.themoviedb.org/3/search/movie?query=${searchParams}&api_key=${import.meta.env.VITE_API_KEY}`);
     
     const [isLoading, movieData, error] = useFetch(url);
+    console.log(error);
 
     return (
         <div className="w-full h-auto text-black">
@@ -27,7 +28,7 @@ const SearchMovie = (props)=>{
             {!isLoading && <MovieGrid className='grid-cols-3' movies={movieData.results}></MovieGrid>}
             </div>
             {isLoading && !error && <Loader />}
-            {error && <ErrorPage error={error} />}
+            {error.status && <ErrorPage error={error.error} />}
         </div>
         
     )

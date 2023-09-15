@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useFetch = (endpoint)=>{
     const [movieData, setMovieData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState({status: false, error: {}});
 
     useEffect(()=>{
         const options = {
@@ -26,7 +26,7 @@ const useFetch = (endpoint)=>{
                 setIsLoading(false);
             })
             .catch(err =>{
-                setError(true);
+                setError({status: true, error: err});
                 setIsLoading(true);
             });    
     }, [endpoint])
