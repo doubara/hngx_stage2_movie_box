@@ -21,6 +21,9 @@ export default {
       },
     },
     screens: {
+      'lg': {'max': '1024px'},
+      // => @media (max-width: 1024px) { ... }
+      
       'md': {'max': '865px'},
       // => @media (max-width: 767px) { ... }
 
