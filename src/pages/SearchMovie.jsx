@@ -11,7 +11,6 @@ const SearchMovie = (props)=>{
     const [url, setUrl] = useState(`https://api.themoviedb.org/3/search/movie?query=${searchParams}&api_key=${import.meta.env.VITE_API_KEY}`);
     
     const [isLoading, movieData, error] = useFetch(url);
-    console.log(error);
 
     return (
         <div className="w-full h-auto text-black">
