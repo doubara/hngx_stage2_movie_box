@@ -4,10 +4,10 @@ const MovieDetailsCard = ({movie}) =>{
         <div className="h-1/2">
             <img className='rounded-lg w-full  object-cover' src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
         </div>
-        <p className="py-6 leading-loose">
+        <p className="py-6 leading-loose flex gap-2 flex-gap-2 md:flex-col text-xl">
             <span className='pr-2' data-testid='movie-title'>{movie?.title} </span>
-            *
-            <span className='px-2' data-testid='movie-release-date'>{movie?.release_date}</span> * PG-13 * 
+            <span className='px-2' data-testid='movie-release-date'>{movie?.release_date}</span> 
+            <span> PG-13 </span> 
             <span className='px-2' data-testid='movie-runtime'>{movie.runtime}</span>
             <span className="text-red-400 border-grey-200 rounded-full p-4">{movie.genres.map(genre=>{
             return <span key={genre*Math.random()*876} className="text-red-400 border border-gray-200 rounded-full inline-blok ml-2 p-2">{genre.name}</span>
