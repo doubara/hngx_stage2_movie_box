@@ -13,7 +13,7 @@ function App() {
   return (
     <Routes>
       <Route exact path='/' element={<Home />}></Route>
-      <Route path='/movie/:id' element={<Movies />}></Route>
+      <Route path='/movies/:id' element={<Movies />}></Route>
       <Route path='/search/:id' element={<SearchMovie />} ></Route>
       <Route path='*' element={<Home />}></Route>
     </Routes>
