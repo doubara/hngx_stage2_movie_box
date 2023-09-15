@@ -27,7 +27,7 @@ when you search a movie, ypu be routed to a search page where the results of you
 The title of each serached movie is a link that routes you to a details page.
 ### Links
 
-- Live Site URL: [Click here]()
+- Live Site URL: [Click here](https://hngx-stage2-movie-box-fnwv.vercel.app/)
 
 ### Built with
 
