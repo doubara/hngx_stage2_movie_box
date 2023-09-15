@@ -16,10 +16,10 @@ const Navigation = (props) =>{
             <li className='py-6 my-6 pl-8 pr-2 bg-red-200 border-r-4 border-red-600 md:border-none md:text-red-600 md:bg-transparent md:border-0 md:border-t-4 md:py-2 md:my-0 '>
                 <NavLink className='hover:text-red-500' >Movies</NavLink>
             </li>
-            <li className='my-12 pl-8 pr-2 md:py-2 md:my-0'>
+            <li className='my-12 pl-8 pr-2 md:py-2 md:hidden'>
                 <NavLink>TV Series</NavLink>
             </li>
-            <li className='my-12 pl-8 pr-2  md:py-2 md:my-0'>
+            <li className='my-12 pl-8 pr-2  md:py-2 md:hidden'>
                 <NavLink>Upcoming</NavLink>
             </li>
         </ul>
