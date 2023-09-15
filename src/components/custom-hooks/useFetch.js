@@ -1,36 +1,37 @@
 import { useEffect, useState } from "react";
 
+const useFetch = (endpoint) => {
+  const [movieData, setMovieData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState({ status: false, error: {} });
 
-const useFetch = (endpoint)=>{
-    const [movieData, setMovieData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState({status: false, error: {}});
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: 'place your endpoints bros😁',
+      },
+    };
 
-    useEffect(()=>{
-        const options = {
-            method: 'GET',
-            headers: {
-              accept: 'application/json',
-                Authorization: `${import.meta.env.VITE_API_BEARER_TOKEN}`
-            }
-          };
-          
-        fetch(endpoint, options)
-            .then(response => response.json())
-            .then(response => {
-                if (response.results.length === 0){
-                    throw new Error('No Movies to show');
-                    setIsLoading(false);
-                }
-                setMovieData(response);
-                setIsLoading(false);
-            })
-            .catch(err =>{
-                setError({status: true, error: err});
-                setIsLoading(true);
-            });    
-    }, [endpoint])
-    return [isLoading, movieData, error];
-}
+    fetch(endpoint, options)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        // if (response?.results.length === 0) {
+        //   throw new Error("No Movies to show");
+        // }
+        setMovieData(response);
+      })
+      .catch((err) => {
+        setError({ status: true, error: err });
+        setIsLoading(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [endpoint]);
+  return [isLoading, movieData, error];
+};
 
 export default useFetch;
