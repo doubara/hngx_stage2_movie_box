@@ -18,6 +18,10 @@ const useFetch = (endpoint)=>{
         fetch(endpoint, options)
             .then(response => response.json())
             .then(response => {
+                if (response.results.length === 0){
+                    throw new Error('No Movies to show');
+                    setIsLoading(false);
+                }
                 setMovieData(response);
                 setIsLoading(false);
             })

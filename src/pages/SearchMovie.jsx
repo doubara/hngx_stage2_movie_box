@@ -3,6 +3,7 @@ import { useParams, useNavigate} from "react-router-dom";
 import useFetch from "../components/custom-hooks/useFetch"
 import MovieGrid from "../components/MovieGrid";
 import Loader from "../components/loader/Loader";
+import ErrorPage from '../components/ErrorPage';
 
 const SearchMovie = (props)=>{
     const searchParams = useParams().id;
@@ -25,7 +26,7 @@ const SearchMovie = (props)=>{
             <div>
             {!isLoading && <MovieGrid className='grid-cols-3' movies={movieData.results}></MovieGrid>}
             </div>
-            {isLoading && <Loader />}
+            {isLoading && !error && <Loader />}
             {error && <ErrorPage error={error} />}
         </div>
         

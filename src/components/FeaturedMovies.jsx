@@ -24,7 +24,7 @@ const FeaturedMovies = (props) =>{
                     />
                 </div>}
             {!isLoading && <MovieGrid movies={movieData?.results} />}
-            {error && <ErrorPage />}
+            {error && <ErrorPage error={error} />}
             </div>
             
         </div>
