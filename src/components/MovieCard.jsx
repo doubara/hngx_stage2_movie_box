@@ -38,7 +38,7 @@ const MovieCard = ({title, movie})=>{
                     </div>
                     <div className='px-4 py-3'>
                         <p data-testid='movie-release-date' className='text-gray-500'>{movie.release_date}</p>
-                        <h2 className='text-xl '><Link className='hover:text-gray-600 hover:scale-150' data_testid='movie-title' to={`/movie/${movie.id}`}>{movie.title}</Link></h2>
+                        <h2 className='text-xl '><Link className='hover:text-gray-600 hover:scale-150' data_testid='movie-title' to={`/movies/${movie.id}`}>{movie.title}</Link></h2>
                         <Rating imdbScore={movie.vote_average} tomatoeScore={movie.popularity}></Rating>
                         <p className='text-gray-500'>{movie.genre_ids.map(genre_id=>{
                             return <span className='px-1' key={genre_id}>{GENRE[genre_id]}</span>
