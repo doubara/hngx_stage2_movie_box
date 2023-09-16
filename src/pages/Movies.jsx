@@ -2,8 +2,6 @@ import { useState } from "react";
 
 import Navigation from "../components/Navigation";
 import MovieDetailsCard from "../components/MovieDetailsCard";
-import { Hourglass } from "react-loader-spinner";
-// custom hook import
 import useFetch from '../components/custom-hooks/useFetch';
 
 import ErrorPage from "../components/ErrorPage";
@@ -11,10 +9,9 @@ import { useParams } from "react-router-dom";
 import Loader from "../components/loader/Loader";
 
 const Movies = (props)=>{
-
     const paramsId = useParams().id;
 
-    const [url, setUrl] = useState(`https://api.themoviedb.org/3/movie/${paramsId}?api_key=${import.meta.env.VITE_API_KEY}`);
+    const [url, setUrl] = useState(`https://api.themoviedb.org/3/movie/${paramsId}?api_key=${import.meta.env.VITE_API_KEY}`)
     
     const [isLoading, movieData, error] = useFetch(url);
     
@@ -23,7 +20,7 @@ const Movies = (props)=>{
             <Navigation />
         </div>
         <div className="basis-3/4 min-h-screen border md:basis-1 ">
-            {!isLoading && <MovieDetailsCard movie={movieData} />} 
+            {!isLoading && !error.status && <MovieDetailsCard movie={movieData} />} 
         </div>
         {error.status && <ErrorPage error={error.error} />}
         {isLoading && <Loader/>}

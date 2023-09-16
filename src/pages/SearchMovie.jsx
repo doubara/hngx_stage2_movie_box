@@ -24,7 +24,7 @@ const SearchMovie = (props)=>{
             </div>
             
             <div>
-            {!isLoading && <MovieGrid className='grid-cols-3' movies={movieData.results}></MovieGrid>}
+            {(!isLoading && !error.status) && <MovieGrid className='grid-cols-3' movies={movieData.results}></MovieGrid>}
             </div>
             {isLoading && !error && <Loader />}
             {error.status && <ErrorPage error={error.error} />}

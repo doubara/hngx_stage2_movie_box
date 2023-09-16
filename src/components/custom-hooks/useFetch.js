@@ -8,26 +8,27 @@ const useFetch = (endpoint)=>{
 
     useEffect(()=>{
         const options = {
-            method: 'GET',
-            headers: {
-              accept: 'application/json',
-                Authorization: `${import.meta.env.VITE_API_BEARER_TOKEN}`
-            }
-          };
-          
+            method: 'GET', 
+            headers: 
+            {
+                accept: 'application/json',
+                Authorization: 'bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NWE5YzRkZDA5YmZhYmNjMTAzMTRiOGI1YTU5YTViNCIsInN1YiI6IjY0ZmYxODIwZGI0ZWQ2MTAzMmE2Y2M3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1El547BOzXtxmlszJAjvkLC-81h_bSObXhevpDnjV2A'
+            },
+
+        };
         fetch(endpoint, options)
             .then(response => response.json())
             .then(response => {
-                if (response.results.length === 0){
-                    throw new Error('No Movies to show');
-                    setIsLoading(false);
-                }
+                // if (response.results.length === 0){
+                //     setIsLoading(false);
+                //     throw new Error('No Movies to show');
+                // }
                 setMovieData(response);
                 setIsLoading(false);
             })
             .catch(err =>{
                 setError({status: true, error: err});
-                setIsLoading(true);
+                setIsLoading(false);
             });    
     }, [endpoint])
     return [isLoading, movieData, error];

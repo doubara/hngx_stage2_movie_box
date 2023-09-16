@@ -23,7 +23,7 @@ const FeaturedMovies = (props) =>{
                         colors={['#306cce', '#72a1ed']}
                     />
                 </div>}
-            {!isLoading && <MovieGrid movies={movieData?.results} />}
+            {!isLoading && !error.status && <MovieGrid movies={movieData?.results} />}
             {error.status && <ErrorPage error={error.error} />}
             </div>
             
