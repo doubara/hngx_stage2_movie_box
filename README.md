@@ -1,36 +1,36 @@
 # MovieBox
 
-Movie box is a one stop web app where you can discover movies. search a wide catalog of movies in different geners.
+Movie box is a one stop web app where you can discover movies. search a wide catalog of movies in different genres.
 
 ## Table of content
 
 - [Table of contents](#table-of-contents)
-- [Overview](#overview)
-  - [Links](#links)
-  - [Built with](#built-with)
+- [Features](#Features)
+- [Use App](#Use)
+- [Links](#links)
+- [Built with](#built-with)
 - [Installation](#installation)
 - [Author](#author)
 
-## Overview
-The app opens to the hme page on initial page load. on the home page, you'll find a list of top-rated movies from imdb.
+## Features
 
-The title of each movie is a link that routes you to a details page.
+- View top rated movies.
+- Know more about a movie. view details
+-  Search for a movies by it's title.
 
-The details page has more information about the movie such as; title, release date, duration, short overview etc.
+## Use
+- **Home Page**: The page page displays a list of 10 top-rated movies. You can see movie details by clicking on the title of the movie
 
-on the details pag, you'll find links (home, Movie, Tvseries etc). The only functional link is the home link which then routes you back to the homepage.
+- **Search**: A user can search a movie by title using the search bar
 
-on the homepage, you can search for a movie by its title.
+- **Movie Details**: A user can view movie details by clicking on the movie title which will route the user to the movie details page
 
-when you search a movie, ypu be routed to a search page where the results of your search is displayed.
-
-The title of each serached movie is a link that routes you to a details page.
-### Links
+## Links
 
 - Live Site URL: [Click here](https://hngx-stage2-movie-box-fnwv.vercel.app/)
 
-### Built with
-
+## Built with
+- create react app with yarn
 - Javascript
 - React.js
 - Tailwind.css, vanilla CSS
@@ -41,7 +41,7 @@ The title of each serached movie is a link that routes you to a details page.
 - Clone repo into your drive
 - cd into the repo
 - run yarn on the terminal to install dependencies
-- after installation of packages, run yarn dev to run development server
+- after installation of packages, run yarn dev on terminal to run development server
 
 ## Author
 
