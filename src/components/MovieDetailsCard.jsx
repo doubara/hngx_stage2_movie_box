@@ -7,9 +7,9 @@ const MovieDetailsCard = ({movie}) =>{
         </div>
         <p className="py-6 leading-loose flex gap-2 flex-gap-2 lg:flex-col text-xl items-center">
             <span data-testid='movie-title'>{movie?.title} </span>
-            <span data-testid='movie-release-date'>{movie?.release_date}</span> 
+            <span data-testid='movie-release-date'>{new Date(movie?.release_date).toISOString()}</span> 
             <span> PG-13 </span> 
-            <span data-testid='movie-runtime'>{new Date(movie.runtime).toISOString()} minutes</span>
+            <span data-testid='movie-runtime'>{movie.runtime} minutes</span>
             <span className="text-red-400 border-grey-200 rounded-full p-4">{movie.genres.map((genre, index)=>{
             return <span key={index*Math.random()*876} className="text-red-400 border border-gray-200 rounded-full inline-blok mr-2 p-2">{genre.name}</span>
         })}</span>  
