@@ -9,7 +9,7 @@ const MovieDetailsCard = ({movie}) =>{
             <span data-testid='movie-title'>{movie?.title} </span>
             <span data-testid='movie-release-date'>{movie?.release_date}</span> 
             <span> PG-13 </span> 
-            <span data-testid='movie-runtime'>{movie.runtime}</span>
+            <span data-testid='movie-runtime'>{new Date(movie.runtime).toISOString()}</span>
             <span className="text-red-400 border-grey-200 rounded-full p-4">{movie.genres.map((genre, index)=>{
             return <span key={index*Math.random()*876} className="text-red-400 border border-gray-200 rounded-full inline-blok mr-2 p-2">{genre.name}</span>
         })}</span>  
